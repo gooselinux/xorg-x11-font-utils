@@ -1,0 +1,26 @@
+--- font-util-1.0.1/configure.ac.autoconf-add-with-fontdir-option	2005-12-16 00:16:32.000000000 -0500
++++ font-util-1.0.1/configure.ac	2005-12-16 00:13:07.000000000 -0500
+@@ -40,6 +40,13 @@
+ 	[MAPDIR="$DEFAULT_MAPDIR"])
+ AC_SUBST(MAPDIR)
+ 
++DEFAULT_FONTDIR=${datadir}/X11/fonts
++AC_ARG_WITH(fontdir,
++	AS_HELP_STRING([--with-fontdir=FONTDIR], [Path to install Xorg fonts by default]),
++	[FONTDIR="$withval"],
++	[FONTDIR="$DEFAULT_FONTDIR"])
++AC_SUBST(FONTDIR)
++
+ XORG_MANPAGE_SECTIONS
+ XORG_RELEASE_VERSION
+ 
+--- font-util-1.0.1/fontutil.pc.in.autoconf-add-with-fontdir-option	2005-12-16 00:17:06.000000000 -0500
++++ font-util-1.0.1/fontutil.pc.in	2005-12-16 00:10:40.000000000 -0500
+@@ -2,6 +2,7 @@
+ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+ mapdir=@MAPDIR@
++fontdir=@FONTDIR@
+  
+ Name: FontUtil
+ Description: Font utilities dirs

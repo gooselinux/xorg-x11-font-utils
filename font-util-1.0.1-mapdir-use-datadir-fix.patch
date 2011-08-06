@@ -1,0 +1,11 @@
+--- font-util-1.0.0/configure.ac.font-util-mapdir-use-datadir-fix	2005-12-14 19:24:26.000000000 -0500
++++ font-util-1.0.1/configure.ac	2005-12-16 00:07:23.000000000 -0500
+@@ -33,7 +33,7 @@
+ 
+ m4_ifdef([AS_HELP_STRING], , [m4_define([AS_HELP_STRING], m4_defn([AC_HELP_STRING]))])
+ 
+-DEFAULT_MAPDIR=${libdir}/X11/fonts/util
++DEFAULT_MAPDIR=${datadir}/X11/fonts/util
+ AC_ARG_WITH(mapdir,
+ 	AS_HELP_STRING([--with-mapdir=MAPDIR], [Path to install font maps]),
+ 	[MAPDIR="$withval"],
